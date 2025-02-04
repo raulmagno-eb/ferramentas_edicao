@@ -51,6 +51,7 @@ from .runRemoteProductExportAlgorithm import RunRemoteProductExportAlgorithm
 from .placeMasterContourLabels import PlaceMasterContourLabels
 from .reprojectAttributes import ReprojectAttributesAlgorithm
 from .createCustomPolygons import CreateCustomPolygons
+from .layoutItemsToCanvas import LayoutItemsToCanvasAlgorithm
 
 
 class Provider(QgsProcessingProvider):
@@ -103,6 +104,7 @@ class Provider(QgsProcessingProvider):
         self.addAlgorithm(PlaceMasterContourLabels())
         self.addAlgorithm(ReprojectAttributesAlgorithm())
         self.addAlgorithm(CreateCustomPolygons())
+        self.addAlgorithm(LayoutItemsToCanvasAlgorithm())
 
     def load(self):
         ProcessingConfig.settingIcons[self.name()] = self.icon()
