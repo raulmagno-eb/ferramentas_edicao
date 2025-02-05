@@ -21,16 +21,16 @@ class LayoutItemsToCanvasAlgorithm(QgsProcessingAlgorithm):
         return 'layoutitemstocanvasalgorithm'
         
     def displayName(self):
-        return self.tr('Layout Items to Canvas')
+        return self.tr("Itens do Layout para o Canvas")
         
     def group(self):
-        return self.tr('Layout Tools')
+        return self.tr("Auxiliar")
         
     def groupId(self):
-        return 'layouttools'
+        return 'auxiliar'
         
     def shortHelpString(self):
-        return self.tr('Creates a layer showing the bounds of layout elements')
+        return self.tr("Cria uma camada vetorial com o limite de elementos de um layout de interesse")
         
     def initAlgorithm(self, config=None):
         self.addParameter(QgsProcessingParameterLayout(self.INPUT_LAYOUT, self.tr('Input layout')))
@@ -49,7 +49,7 @@ class LayoutItemsToCanvasAlgorithm(QgsProcessingAlgorithm):
         scale_y = (map_extent.yMaximum() - map_extent.yMinimum()) / (layout_rect.height())
 
         map_x = map_extent.xMinimum() + (layout_x - layout_rect.x()) * scale_x
-        map_y = map_extent.yMaximum() - (layout_y - layout_rect.y()) * scale_y  # Inverter eixo Y
+        map_y = map_extent.yMaximum() - (layout_y - layout_rect.y()) * scale_y  # Inverter eixo Y 
 
         return QgsPointXY(map_x, map_y)
 
